@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class EmailAddress {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+//When students register,they must give the following information:
+	//1) First Name
+	//2) Middle Name
+	//3) Last Name
+	//4) Birthdate(mm-dd-yyyy)
+		
+	System.out.println("Enter your first name: ");
+	String firstName = scan.nextLine();
+	
+	System.out.println("Enter your middle name: ");
+	String middleName = scan.nextLine();
+	
+	System.out.println("Enter your last name: ");
+	String lastName = scan.nextLine();
+	
+	
+	System.out.println("Enter your birthdate (mm-dd-yyyy): ");
+	String bday = scan.nextLine();
+	
+	String firstInitial = firstName.substring(0,1);
+	String lowLastName = lastName.toLowerCase();
+	String middleInitial = middleName.substring(0,1);
+	System.out.println("Email: "+ lowLastName + firstInitial+ middleInitial + "@sharkmail.com");
+			
+	//01-02-2006
+	String Password = bday.substring(0,2) + bday.substring(3,5) + bday.substring(6, 10);
+	System.out.println("Temp Password: " + Password);
+	
+	System.out.println("*** This temporary password is very insecure. Please change it immediately! ***");
+	
+	
+}
+}
+
+//The program should output:
+//1) An email address that is the students last name (lowercase), 
+	//followed by the first initial and middle initial.
+//2) A temporary password that is the student’s birthday (no dashes)
+//3) A message that prompts the user to change their password immediately upon logging in.
+
